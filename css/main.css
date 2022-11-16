@@ -1,0 +1,149 @@
+body {
+    background: #f2f2f2;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium';
+    display: flex;
+}
+.navbar {
+    background: white;
+    padding: 0.8em;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+
+}
+.logo {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    font-size: 1.8em;
+}
+span {
+    color: rgb(132, 189, 0);
+}
+
+
+
+.Accessories_section {
+    background-color: #f3f3f3;
+    padding: 5em;
+    display: flex;
+}
+
+.Books_section {
+    background-color: #f3f3f3;
+    padding: 5em;
+    display: flex;
+    justify-content: flex-end;
+}
+
+li {
+    background: #fafafa;
+    text-align: center;
+    width: 80%;
+    margin: 2em auto 5em auto;
+    padding: 0em auto 5em auto;
+    border-radius: 2em;
+    border: #e7e7e7 solid 2.3px;
+    display: block;
+
+}
+
+
+.li_books {
+    background: #fafafa;
+    text-align: center;
+    width: 80%;
+    margin: 2em auto 5em auto;
+    padding: 0em auto 5em auto;
+    border-radius: 2em;
+    border: #e7e7e7 solid 2.3px;
+    display: block;
+}
+
+img {
+    border: 5px solid #c0c0c0;
+    border-radius: 50%;
+    margin-top: -2.5em;
+}
+
+.book_img {
+    border: 5px solid #c0c0c0;
+    border-radius: 50%;
+    margin-top: -2.5em;
+}
+
+input, select {
+    position: inherit;
+    border: 1px solid #0000000a;
+    outline: none;
+    background: none;
+}
+
+.ResEnrgv {
+    display: none;
+    align-items: center;
+    margin-left: 2.6em;
+    width: 80%;
+    background: white;
+}
+
+.li_positive {
+    background: rgb(252, 255, 254);
+    border: 1px solid rgba(0, 54, 5, 0.116);
+}
+
+.gold_icon {
+    width: 13px;
+    border: none;
+}
+
+.Fetch_price {
+    background: none;
+    border: 1px solid rgb(223, 223, 223);
+}
+
+.field_name_negative, .field_value_negative {
+    background: rgba(255, 0, 0, 0.034);
+    border: 1px solid rgba(255, 0, 0, 0.123);
+}
+
+.ResNegativeEnrgv {
+    display: none;
+    align-items: center;
+    margin-left: 2.6em;
+    width: 80%;
+    background: white;
+    border: 1px solid rgba(255, 0, 0, 0.123);
+}
+
+.li_negative {
+    background: rgb(255, 249, 249);
+    border: 1px solid rgba(105, 0, 0, 0.123);
+}
+
+.splitter {
+    border-left: 2px solid rgb(0, 0, 0);
+    height: 52px;
+    position: absolute;
+    margin-left: 7px;
+    margin-right: 7px;
+    top: 4px;
+}
+
+.load, .save {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    font-size: 1.8em;
+    margin-left: 30px;
+    margin-right: 20px;
+}
+
+.load:hover, .save:hover{
+    color: rgb(132, 189, 0);
+    cursor: context-menu;
+}
+.InputFile {
+    display: none;
+}

@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Titel's Forge</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+
+    <body>
+        <div class="navbar">
+            <div class="container">
+                <a class="logo" href="index.html">TITEL'S <span>FORGE</span></a>
+                <a class="splitter"></a>
+                <input type="file" class="InputFile" id="myFile">
+                <a class="load" id="load" onclick="loadBuild()">LOAD</a>
+                <a class="splitter"></a>
+                <a class="save" onclick="saveBuild()">SAVE</a>
+                <a class="splitter"></a>
+            </div>
+        </div>
+        <div class="Accessories_section">
+            <div class="container">
+                <ul>
+                    <li>
+                        <img src="Images/amulet.jpg">
+                        <p class="SubtitleEngrvTarget">AMULET</p>
+                        <input id="amulet_name_1"  onchange="calculateBuild('Amulet_name1')" list="engrv1" placeholder="Start typing...">
+                        <datalist id="engrv1">
+                            <option>Disrespect</option>
+                            <option>Spirit Absorption</option>
+                            <option>Ether Predator</option>
+                            <option>Stabilized Status</option>
+                            <option>Grudge</option>
+                            <option>Super Charge</option>
+                            <option>Strong Will</option>
+                            <option>Drops of Ether</option>
+                            <option>Crisis Evasion</option>
+                            <option>Keen Blunt Weapon</option>
+                            <option>Vital Point Strike</option>
+                            <option>Increased Max MP</option>
+                            <option>MP Regen</option>
+                            <option>Master of Escape</option>
+                            <option>Fortitude</option>
+                            <option>Crushing Fist</option>
+                            <option>Shield Piercing</option>
+                            <option>Masters Tenacity</option>
+                            <option>Divine Protection</option>
+                            <option>Heavy Armor</option>
+                            <option>Explosive Expert</option>
+                            <option>Enhanced Shield</option>
+                            <option>Necromancy</option>
+                            <option>Preemptive Strike</option>
+                            <option>Broken Bone</option>
+                            <option>Lightning Fury</option>
+                            <option>Cursed Doll</option>
+                            <option>Contender</option>
+                            <option>Ambush Master</option>
+                            <option>Magick Stream</option>
+                            <option>Barricade</option>
+                            <option>Raid Captain</option>
+                            <option>Awakening</option>
+                            <option>Master Brawler</option>
+                            <option>Mass Increase</option>
+                            <option>Propulsion</option>
+                            <option>Hit Master</option>
+                            <option>Adrenaline</option>
+                            <option>Allout Attack</option>
+                            <option>Expert</option>
+                            <option>Emergency Rescue</option>
+                            <option>Precision Dagger</option>
+                            <option>Berserker Technique</option>
+                            <option>Mayhem</option>
+                            <option>Gravity Training</option>
+                            <option>Rage Hammer</option>
+                            <option>Combat Readiness</option>
+                            <option>Solo Knight</option>
+                            <option>Blessed Aura</option>
+                            <option>Judgment</option>
+                            <option>Empress Grace</option>
+                            <option>Order of the Emperor</option>
+                            <option>Communication Overflow</option>
+                            <option>Master Summoner</option>
+                            <option>Desperate Salvation</option>
+                            <option>True Courage</option>
+                            <option>Esoteric Skill Enhancement</option>
+                            <option>First Intention</option>
+                            <option>Shock Training</option>
+                            <option>Ultimate Skill Taijutsu</option>
+                            <option>Energy Overflow</option>
+                            <option>Robust Spirit</option>
+                            <option>Deathblow</option>
+                            <option>Esoteric Flurry</option>
+                            <option>Burst</option>
+                            <option>Remaining Energy</option>
+                            <option>Demonic Impulse</option>
+                            <option>Perfect Suppression</option>
+                            <option>Death Strike</option>
+                            <option>Loyal Companion</option>
+                            <option>Enhanced Weapon</option>
+                            <option>Pistoleer</option>
+                            <option>Barrage</option>
+                            <option>Firepower Enhancement</option>
+                            <option>Peacemaker</option>
+                            <option>Time to Hunt</option>
+                            <option>Igniter</option>
+                            <option>Reflux</option>
+                            <option>Moon Sound</option>
+                            <option>Hunger</option>
+                            <option>Legacy Of Evolution</option>
+                            <option>Arthentine Technology</option>
+                        </datalist>
+                        <select id="amulet_value_1"  onchange="calculateBuild('Amulet_value1')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <input id="amulet_name_2"  onchange="calculateBuild('Amulet_name2')" list="engrv1" placeholder="Start typing...">
+                        <select id="amulet_value_2"  onchange="calculateBuild('Amulet_value2')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br>
+                        <datalist id="engrv_negative">
+                            <option>Atk Speed Reduction</option>
+                            <option>Atk Power Reduction</option>
+                            <option>Movement Speed Reduction</option>
+                            <option>Defence Reduction</option>
+                        </datalist>
+                        <input class="field_name_negative" id="amulet_name_negative"  onchange="calculateBuild('Amulet_name_negative')" list="engrv_negative" placeholder="Start typing...">
+                        <select class="field_value_negative" id="amulet_value_negative"  onchange="calculateBuild('Amulet_value_negative')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                        <br>
+                        <img class="gold_icon" src="Images/gold.jpg">
+                        <input onchange="SumTotalPrice()" type="number" id="gold_amulet" name="gold_amulet" min="1" max="1000000">
+                        <button class="Fetch_price" type="button" onclick="APi_Fetch_Price('Amulet')">Get!</button>
+                    </li>
+                    <li>
+                        <img src="Images/earring.jpg">
+                        <p class="SubtitleEngrvTarget">EARRING 1</p>
+                        <input id="earring1_name_1"  onchange="calculateBuild('Earring1_name1')" list="engrv1" placeholder="Start typing...">
+                        <select id="earring1_value_1"  onchange="calculateBuild('Earring1_value1')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <input id="earring1_name_2"  onchange="calculateBuild('Earring1_name2')" list="engrv1" placeholder="Start typing...">
+                        <select id="earring1_value_2"  onchange="calculateBuild('Earring1_value2')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br>
+                        <input class="field_name_negative" id="earring1_name_negative"  onchange="calculateBuild('Earring1_name_negative')" list="engrv_negative" placeholder="Start typing...">
+                        <select class="field_value_negative" id="earring1_value_negative"  onchange="calculateBuild('Earring1_value_negative')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                        <br>
+                        <img class="gold_icon" src="Images/gold.jpg">
+                        <input onchange="SumTotalPrice()" type="number" id="gold_earring1" name="gold_earring1" min="0" max="1000000">
+                        <button class="Fetch_price" type="button" onclick="APi_Fetch_Price('Earring1')">Get!</button>
+                    </li>
+                    <li>
+                        <img src="Images/earring.jpg">
+                        <p class="SubtitleEngrvTarget">EARRING 2</p>
+                        <input id="earring2_name_1" onchange="calculateBuild('Earring2_name1')" list="engrv1" placeholder="Start typing...">
+                        <select id="earring2_value_1"  onchange="calculateBuild('Earring2_value1')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <input id="earring2_name_2"  onchange="calculateBuild('Earring2_name2')" list="engrv1" placeholder="Start typing...">
+                        <select id="earring2_value_2"  onchange="calculateBuild('Earring2_value2')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br>
+                        <input class="field_name_negative" id="earring2_name_negative"  onchange="calculateBuild('Earring2_name_negative')" list="engrv_negative" placeholder="Start typing...">
+                        <select class="field_value_negative" id="earring2_value_negative"  onchange="calculateBuild('Earring2_value_negative')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                        <br>
+                        <img class="gold_icon" src="Images/gold.jpg">
+                        <input onchange="SumTotalPrice()" type="number" id="gold_earring2" name="gold_earring2" min="0" max="1000000">
+                        <button class="Fetch_price" type="button" onclick="APi_Fetch_Price('Earring2')">Get!</button>
+                    </li>
+                    <li>
+                        <img src="Images/ring.jpg">
+                        <p class="SubtitleEngrvTarget">RING 1</p>
+                        <input id="ring1_name_1"  onchange="calculateBuild('Ring1_name1')" list="engrv1" placeholder="Start typing...">
+                        <select id="ring1_value_1"  onchange="calculateBuild('Ring1_value1')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <input id="ring1_name_2"  onchange="calculateBuild('Ring1_name2')" list="engrv1" placeholder="Start typing...">
+                        <select id="ring1_value_2"  onchange="calculateBuild('Ring1_value2')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br>
+                        <input class="field_name_negative" id="ring1_name_negative"  onchange="calculateBuild('Ring1_name_negative')" list="engrv_negative" placeholder="Start typing...">
+                        <select class="field_value_negative" id="ring1_value_negative"  onchange="calculateBuild('Ring1_value_negative')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                        <br>
+                        <img class="gold_icon" src="Images/gold.jpg">
+                        <input onchange="SumTotalPrice()" type="number" id="gold_ring1" name="gold_ring1" min="0" max="1000000">
+                        <button class="Fetch_price" type="button" onclick="APi_Fetch_Price('Ring1')">Get!</button>
+                    </li>
+                    <li class="li_right">
+                        <img src="Images/ring.jpg">
+                        <p class="SubtitleEngrvTarget">RING 2</p>
+                        <input id="ring2_name_1"  onchange="calculateBuild('Ring2_name1')" list="engrv1" placeholder="Start typing...">
+                        <select id="ring2_value_1"  onchange="calculateBuild('Ring2_value1')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <input id="ring2_name_2"  onchange="calculateBuild('Ring2_name2')" list="engrv1" placeholder="Start typing...">
+                        <select id="ring2_value_2"  onchange="calculateBuild('Ring2_value2')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br>
+                        <input class="field_name_negative" id="ring2_name_negative"  onchange="calculateBuild('Ring2_name_negative')" list="engrv_negative" placeholder="Start typing...">
+                        <select class="field_value_negative" id="ring2_value_negative"  onchange="calculateBuild('Ring2_value_negative')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                        <br>
+                        <img class="gold_icon" src="Images/gold.jpg">
+                        <input onchange="SumTotalPrice()" type="number" id="gold_ring2" name="gold_ring2" min="0" max="1000000">
+                        <button class="Fetch_price" type="button" onclick="APi_Fetch_Price('Ring2')">Get!</button>
+                    </li>
+                    <li>
+                        <img class="gold_icon" src="Images/gold.jpg">
+                        <input type="text" class="Total_Price" id="Total_Price"><br>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <section class="Books_section">
+            <div class="container">
+                <ul class="books">
+                    <li class="li_books">
+                        <img class="book_img" src="Images/book.jpg">
+                        <p class="SubtitleEngrvTarget">BOOK</p>
+                        <input id="book_name_1"  onchange="calculateBuild('Book_name1')" list="engrv1" placeholder="Start typing...">
+                        <select id="book_value_1"  onchange="calculateBuild('Book_value')">
+                            <option value="3">3</option>
+                            <option value="6">6</option>
+                            <option value="9">9</option>
+                            <option value="12">12</option>
+                        </select>
+                        <input id="book_name_2"  onchange="calculateBuild('Book_name2')" list="engrv1" placeholder="Start typing...">
+                        <select id="book_value_2"  onchange="calculateBuild('Book_value2')">
+                            <option value="3">3</option>
+                            <option value="6">6</option>
+                            <option value="9">9</option>
+                            <option value="12">12</option>
+                        </select>
+                        <br>
+                        <img class="gold_icon" src="Images/gold.jpg">
+                        <input onchange="SumTotalPrice()" type="number" id="gold_book" name="gold_book" min="0" max="1000000">
+                        <button class="Fetch_price" type="button" onclick="APi_Fetch_Price('Book')">Get!</button>
+                    </li>
+                    <li class="li_books">
+                        <img class="book_img" src="Images/STONE.jpg">
+                        <p class="SubtitleEngrvTarget">STONE</p>
+                        <input id="stone_name_1"  onchange="calculateBuild('Stone_name1')" list="engrv1" placeholder="Start typing...">
+                        <select id="stone_value_1"  onchange="calculateBuild('Stone_value1')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                        </select>
+                        <input id="stone_name_2" onchange="calculateBuild('Stone_name2')" list="engrv1" placeholder="Start typing...">
+                        <select id="stone_value_2" onchange="calculateBuild('Stone_value2')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                        </select>
+                        <br>
+                        <input class="field_name_negative" id="stone_name_negative"  onchange="calculateBuild('Stone_name_negative')" list="engrv_negative" placeholder="Start typing...">
+                        <select class="field_value_negative" id="stone_value_negative"  onchange="calculateBuild('Stone_value_negative')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                        <br>
+                        <img class="gold_icon" src="Images/gold.jpg">
+                        <input onchange="SumTotalPrice()" type="number" id="gold_stone" name="gold_stone" min="0" max="1000000">
+                        <button class="Fetch_price" type="button" onclick="APi_Fetch_Price('Stone')">Get!</button>
+                        
+                    </li>
+                    <li class="li_positive">
+                        <br>
+                        <input type="text" class="ResEnrgv" id="1"><br>
+                        <br>
+                        <input type="text" class="ResEnrgv" id="2"><br>
+                        <br>
+                        <input type="text" class="ResEnrgv" id="3"><br>
+                        <br>
+                        <input type="text" class="ResEnrgv" id="4"><br>
+                        <br>
+                        <input type="text" class="ResEnrgv" id="5"><br>
+                        <br>
+                        <input type="text" class="ResEnrgv" id="6"><br>
+                        <br>
+                        <input type="text" class="ResEnrgv" id="7"><br>
+                        <br>
+                        <input type="text" class="ResEnrgv" id="8"><br>
+                        <br>
+                        <input type="text" class="ResEnrgv" id="9"><br>
+                        <br>
+                        <input type="text" class="ResEnrgv" id="10"><br>
+                        <br>
+                        <input type="text" class="ResEnrgv" id="11"><br>
+                        <br>
+                        <input type="text" class="ResEnrgv" id="12"><br>
+                        <br>
+                        <input type="text" class="ResEnrgv" id="13"><br>
+                        <br>
+                        <input type="text" class="ResEnrgv" id="14"><br>
+                        <br>
+                        <input type="text" class="ResEnrgv" id="15"><br>
+                        <br>
+                        <input type="text" class="ResEnrgv" id="16"><br>
+                    </li>
+                    <li class="li_negative">
+                        <br>
+                        <input type="text" class="ResNegativeEnrgv" id="1_negative"><br>
+                        <br>
+                        <input type="text" class="ResNegativeEnrgv" id="2_negative"><br>
+                        <br>
+                        <input type="text" class="ResNegativeEnrgv" id="3_negative"><br>
+                        <br>
+                        <input type="text" class="ResNegativeEnrgv" id="4_negative"><br>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <script type="text/javascript">
+            
+            function SumTotalPrice () {
+                var Amulet_Price = document.getElementById("gold_amulet").value;
+                var Earring1_Price = document.getElementById("gold_earring1").value;
+                var Earring2_Price = document.getElementById("gold_earring2").value;
+                var Ring1_Price = document.getElementById("gold_ring1").value;
+                var Ring2_Price = document.getElementById("gold_ring2").value;
+                var Book_Price = document.getElementById("gold_book").value;
+                var Stone_Price = document.getElementById("gold_stone").value;
+
+                document.getElementById("Total_Price").value = Number(Amulet_Price) +
+                                                               Number(Earring1_Price) +
+                                                               Number(Earring2_Price) +
+                                                               Number(Ring1_Price) +
+                                                               Number(Ring2_Price) +
+                                                               Number(Book_Price) +
+                                                               Number(Stone_Price) ;
+            }
+
+            function APi_Fetch_Price(EngravingSrouce){
+                SumTotalPrice();
+                alert('AGS please release API!');
+            }
+
+            function calculateBuild(WhatChanged) {
+                var Amulet_name_1 = document.getElementById("amulet_name_1");
+                var Amulet_value_1 = document.getElementById("amulet_value_1");
+                var Amulet_name_2 = document.getElementById("amulet_name_2");
+                var Amulet_value_2 = document.getElementById("amulet_value_2");
+                var Amulet_name_negative = document.getElementById("amulet_name_negative");
+                var Amulet_value_negative = document.getElementById("amulet_value_negative");
+
+                var Earring1_name_1 = document.getElementById("earring1_name_1");
+                var Earring1_value_1 = document.getElementById("earring1_value_1");
+                var Earring1_name_2 = document.getElementById("earring1_name_2");
+                var Earring1_value_2 = document.getElementById("earring1_value_2");
+                var Earring1_name_negative = document.getElementById("earring1_name_negative");
+                var Earring1_value_negative = document.getElementById("earring1_value_negative");
+                var Earring2_name_1 = document.getElementById("earring2_name_1");
+                var Earring2_value_1 = document.getElementById("earring2_value_1");
+                var Earring2_name_2 = document.getElementById("earring2_name_2");
+                var Earring2_value_2 = document.getElementById("earring2_value_2");
+                var Earring2_name_negative = document.getElementById("earring2_name_negative");
+                var Earring2_value_negative = document.getElementById("earring2_value_negative");
+
+                var Ring1_name_1 = document.getElementById("ring1_name_1");
+                var Ring1_value_1 = document.getElementById("ring1_value_1");
+                var Ring1_name_2 = document.getElementById("ring1_name_2");
+                var Ring1_value_2 = document.getElementById("ring1_value_2");
+                var Ring1_name_negative = document.getElementById("ring1_name_negative");
+                var Ring1_value_negative = document.getElementById("ring1_value_negative");
+                var Ring2_name_1 = document.getElementById("ring2_name_1");
+                var Ring2_value_1 = document.getElementById("ring2_value_1");
+                var Ring2_name_2 = document.getElementById("ring2_name_2");
+                var Ring2_value_2 = document.getElementById("ring2_value_2");
+                var Ring2_name_negative = document.getElementById("ring2_name_negative");
+                var Ring2_value_negative = document.getElementById("ring2_value_negative");
+                
+                var Book_name_1 = document.getElementById("book_name_1");
+                var Book_value_1 = document.getElementById("book_value_1");
+                var Book_name_2 = document.getElementById("book_name_2");
+                var Book_value_2 = document.getElementById("book_value_2");
+
+                var Stone_name_1 = document.getElementById("stone_name_1");
+                var Stone_value_1 = document.getElementById("stone_value_1");
+                var Stone_name_2 = document.getElementById("stone_name_2");
+                var Stone_value_2 = document.getElementById("stone_value_2");
+                var Stone_name_negative = document.getElementById("stone_name_negative");
+                var Stone_value_negative = document.getElementById("stone_value_negative");
+                
+                var AllEngrvs = document.getElementById("engrv1");
+                
+                // Validation Amulet
+                if ((WhatChanged == 'Amulet_name1' || WhatChanged == 'Amulet_name2') && Amulet_name_1.value == Amulet_name_2.value && Amulet_name_1.value != "") {
+                    alert('Yo, stupid, you cannot have same engraving on Amulet!');
+                    
+                    if (WhatChanged == 'Amulet_name1') {
+                        Amulet_name_1.value = "";
+                    }
+                    else if (WhatChanged == 'Amulet_name2') {
+                        Amulet_name_2.value = "";
+                    }
+
+                    return;
+
+                }
+
+                // Validation Earring
+                if ((WhatChanged == 'Earring1_name1' || WhatChanged == 'Earring1_name2') && Earring1_name_1.value == Earring1_name_2.value && Earring1_name_2.value != "") {
+                    alert('Yo, stupid, you cannot have same engraving on Earring 1!');
+                    
+                    if (WhatChanged == 'Earring1_name1') {
+                        Earring1_name_1.value = "";
+                    }
+                    else if (WhatChanged == 'Earring1_name2') {
+                        Earring1_name_2.value = "";
+                    }
+
+                    return;
+
+                }
+
+                if ((WhatChanged == 'Earring2_name1' || WhatChanged == 'Earring2_name2') && Earring2_name_1.value == Earring2_name_2.value && Earring2_name_2.value != "") {
+                    alert('Yo, stupid, you cannot have same engraving on Earring 2!');
+                    
+                    if (WhatChanged == 'Earring2_name1') {
+                        Earring2_name_1.value = "";
+                    }
+                    else if (WhatChanged == 'Earring2_name2') {
+                        Earring2_name_2.value = "";
+                    }
+
+                    return;
+
+                }
+
+                // Validation Ring
+                if ((WhatChanged == 'Ring1_name1' || WhatChanged == 'Ring1_name2') && Ring1_name_1.value == Ring1_name_2.value && Ring1_name_2.value != "") {
+                    alert('Yo, stupid, you cannot have same engraving on Ring 1!');
+                    
+                    if (WhatChanged == 'Ring1_name1') {
+                        Ring1_name_1.value = "";
+                    }
+                    else if (WhatChanged == 'Ring1_name2') {
+                        Ring1_name_2.value = "";
+                    }
+
+                    return;
+
+                }
+
+                if ((WhatChanged == 'Ring2_name1' || WhatChanged == 'Ring2_name2') && Ring2_name_1.value == Ring2_name_2.value && Ring2_name_2.value != "") {
+                    alert('Yo, stupid, you cannot have same engraving on Ring 2!');
+                    
+                    if (WhatChanged == 'Ring2_name1') {
+                        Ring2_name_1.value = "";
+                    }
+                    else if (WhatChanged == 'ERing2_name2') {
+                        Ring2_name_2.value = "";
+                    }
+
+                    return;
+
+                }
+
+                // Validation Stone
+                if ((WhatChanged == 'Stone_name1' || WhatChanged == 'Stone_name2') && Stone_name_1.value == Stone_name_2.value && Stone_name_2.value != "") {
+                    alert('Yo, stupid, you cannot have same engraving on Stone!');
+                    
+                    if (WhatChanged == 'Stone_name1') {
+                        Stone_name_1.value = "";
+                    }
+                    else if (WhatChanged == 'Stone_name2') {
+                        Stone_name_2.value = "";
+                    }
+
+                    return;
+
+                }
+                
+                var NegativeEngravings = {
+                    AtkSpeedReduction: 0,
+                    AtkPowerReduction: 0,
+                    MovementSpeedReduction: 0,
+                    DefenceReduction: 0
+                };
+
+                var Engravings = {
+                    Disrespect: 0,
+                    SpiritAbsorption: 0,
+                    EtherPredator: 0,
+                    StabilizedStatus: 0,
+                    Grudge: 0,
+                    SuperCharge: 0,
+                    StrongWill: 0,
+                    DropsofEther: 0,
+                    CrisisEvasion: 0,
+                    KeenBluntWeapon: 0,
+                    VitalPointStrike: 0,
+                    IncreasedMaxMP: 0,
+                    MPRegen: 0,
+                    MasterofEscape: 0,
+                    Fortitude: 0,
+                    CrushingFist: 0,
+                    ShieldPiercing: 0,
+                    MastersTenacity: 0,
+                    DivineProtection: 0,
+                    HeavyArmor: 0,
+                    ExplosiveExpert: 0,
+                    EnhancedShield: 0,
+                    Necromancy: 0,
+                    PreemptiveStrike: 0,
+                    BrokenBone: 0,
+                    LightningFury: 0,
+                    CursedDoll: 0,
+                    Contender: 0,
+                    AmbushMaster: 0,
+                    MagickStream: 0,
+                    Barricade: 0,
+                    RaidCaptain: 0,
+                    Awakening: 0,
+                    MasterBrawler: 0,
+                    MassIncrease: 0,
+                    Propulsion: 0,
+                    HitMaster: 0,
+                    Adrenaline: 0,
+                    AlloutAttack: 0,
+                    Expert: 0,
+                    EmergencyRescue: 0,
+                    PrecisionDagger: 0,
+                    BerserkerTechnique: 0,
+                    Mayhem: 0,
+                    GravityTraining: 0,
+                    RageHammer: 0,
+                    CombatReadiness: 0,
+                    SoloKnight: 0,
+                    BlessedAura: 0,
+                    Judgment: 0,
+                    EmpressGrace: 0,
+                    OrderoftheEmperor: 0,
+                    CommunicationOverflow: 0,
+                    MasterSummoner: 0,
+                    DesperateSalvation: 0,
+                    TrueCourage: 0,
+                    EsotericSkillEnhancement: 0,
+                    FirstIntention: 0,
+                    ShockTraining: 0,
+                    UltimateSkillTaijutsu: 0,
+                    EnergyOverflow: 0,
+                    RobustSpirit: 0,
+                    Deathblow: 0,
+                    EsotericFlurry: 0,
+                    Burst: 0,
+                    RemainingEnergy: 0,
+                    DemonicImpulse: 0,
+                    PerfectSuppression: 0,
+                    DeathStrike: 0,
+                    LoyalCompanion: 0,
+                    EnhancedWeapon: 0,
+                    Pistoleer: 0,
+                    Barrage: 0,
+                    FirepowerEnhancement: 0,
+                    Peacemaker: 0,
+                    TimetoHunt: 0,
+                    Igniter: 0,
+                    Reflux: 0,
+                    MoonSound: 0,
+                    Hunger: 0,
+                    LegacyOfEvolution: 0,
+                    ArthentineTechnology: 0
+                };
+
+                for (var key in NegativeEngravings) {
+                    // Amulet
+                    if ( key ==  getFormattedString(Amulet_name_negative.value) ) {
+                        NegativeEngravings[key] = Number(NegativeEngravings[key]) + Number(Amulet_value_negative.value);;
+                    }
+
+                    // Earring
+                    if ( key ==  getFormattedString(Earring1_name_negative.value) ) {
+                        NegativeEngravings[key] = Number(NegativeEngravings[key]) + Number(Earring1_value_negative.value);;
+                    }
+                    if ( key ==  getFormattedString(Earring2_name_negative.value) ) {
+                        NegativeEngravings[key] = Number(NegativeEngravings[key]) + Number(Earring2_value_negative.value);;
+                    }
+
+                    // Ring
+                    if ( key ==  getFormattedString(Ring1_name_negative.value) ) {
+                        NegativeEngravings[key] = Number(NegativeEngravings[key]) + Number(Ring1_value_negative.value);;
+                    }
+                    if ( key ==  getFormattedString(Ring2_name_negative.value) ) {
+                        NegativeEngravings[key] = Number(NegativeEngravings[key]) + Number(Ring2_value_negative.value);;
+                    }
+
+                    // Stone
+                    if ( key ==  getFormattedString(Stone_name_negative.value) ) {
+                        NegativeEngravings[key] = Number(NegativeEngravings[key]) + Number(Stone_value_negative.value);;
+                    }
+
+                }
+
+                for ( var key in Engravings){
+                    // Amulet
+                    if ( key ==  getFormattedString(Amulet_name_1.value) ) {
+                        Engravings[key] = Number(Engravings[key]) + Number(Amulet_value_1.value);;
+                    }
+
+                    if ( key ==  getFormattedString(Amulet_name_2.value) ) {
+                        Engravings[key] = Number(Engravings[key]) + Number(Amulet_value_2.value);
+                    }
+                    
+                    // Earring
+                    if ( key ==  getFormattedString(Earring1_name_1.value) ) {
+                        Engravings[key] = Number(Engravings[key]) + Number(Earring1_value_1.value);
+                    }
+
+                    if ( key ==  getFormattedString(Earring1_name_2.value) ) {
+                        Engravings[key] = Number(Engravings[key]) + Number(Earring1_value_2.value);
+                    }
+
+                    if ( key ==  getFormattedString(Earring2_name_1.value) ) {
+                        Engravings[key] = Number(Engravings[key]) + Number(Earring2_value_1.value);
+                    }
+
+                    if ( key ==  getFormattedString(Earring2_name_2.value) ) {
+                        Engravings[key] = Number(Engravings[key]) + Number(Earring2_value_2.value);
+                    }
+                    
+                    // Ring
+                    if ( key ==  getFormattedString(Ring1_name_1.value) ) {
+                        Engravings[key] = Number(Engravings[key]) + Number(Ring1_value_1.value);
+                    }
+
+                    if ( key ==  getFormattedString(Ring1_name_2.value) ) {
+                        Engravings[key] = Number(Engravings[key]) + Number(Ring1_value_2.value);
+                    }
+
+                    if ( key ==  getFormattedString(Ring2_name_1.value) ) {
+                        Engravings[key] = Number(Engravings[key]) + Number(Ring2_value_1.value);
+                    }
+
+                    if ( key ==  getFormattedString(Ring2_name_2.value) ) {
+                        Engravings[key] = Number(Engravings[key]) + Number(Ring2_value_2.value);
+                    }
+
+                    // Book
+                    if ( key ==  getFormattedString(Book_name_1.value) ) {
+                        Engravings[key] = Number(Engravings[key]) + Number(Book_value_1.value);
+                    }
+
+                    if ( key ==  getFormattedString(Book_name_2.value) ) {
+                        Engravings[key] = Number(Engravings[key]) + Number(Book_value_2.value);
+                    }
+
+                    // Stone
+                    if ( key ==  getFormattedString(Stone_name_1.value) ) {
+                        Engravings[key] = Number(Engravings[key]) + Number(Stone_value_1.value);
+                    }
+
+                    if ( key ==  getFormattedString(Stone_name_2.value) ) {
+                        Engravings[key] = Number(Engravings[key]) + Number(Stone_value_2.value);
+                    }
+                }
+                
+                let HiddenInput = 1;
+                let HiddenNegativeInput = 1;
+                var Hue = [ "#ffffff",
+                            "#c2b200",
+                            "#a5c200",
+                            "#85c200",
+                            "#6ec200",
+                            "#54c200",
+                            "#44c200",
+                            "#27c200",
+                            "#00c21d",
+                            "#00c231",
+                            "#00c244",
+                            "#00c261",
+                            "#00c27b",
+                            "#00c298",
+                            "#00c2b8",
+                            "#00b8c2" ];
+                
+                var NegativeHue = [
+                    "#ffffff",
+                    "#cc6900",
+                    "#cc3300",
+                    "#cc0000" ];
+
+                for ( var i = 1; i < 4; i++ ) {
+                    var CurrentNegElementHide = document.getElementById(i.toString() + "_negative");
+                    CurrentNegElementHide.style.display = "None";
+                    CurrentNegElementHide.style.background = "#ffffff";
+                    CurrentNegElementHide.value = "";
+                }
+                
+                for ( var i = 1; i < 16; i++ ) {
+                    var CurrentElementHide = document.getElementById(i.toString());
+                    CurrentElementHide.style.display = "None";
+                    CurrentElementHide.style.background = "#ffffff";
+                    CurrentElementHide.value = "";
+                }
+
+                for (var key in NegativeEngravings) {
+                    var HueNegNr = 0;
+                    var NegDifference = 0;
+                    if (Number(NegativeEngravings[key]) > 0) {
+                        var CurrentNegElement = document.getElementById(HiddenNegativeInput.toString() + "_negative" );
+                        CurrentNegElement.style.display = "Block";
+                        if (Number(NegativeEngravings[key]) > 15){
+                            HueNegNr = 3;
+                            NegDifference = Number(NegativeEngravings[key]) - 15;
+                        } else if (Number(NegativeEngravings[key]) < 0){
+                            HueNegNr = 0;
+                        } else {
+                            HueNegNr = Math.floor(Number(NegativeEngravings[key]) / 5);
+                        }
+                        if (HueNegNr > 3) {HueNegNr = 3;}
+                        if (HueNegNr < 0) {HueNegNr = 0;}
+                        CurrentNegElement.style.background = NegativeHue[HueNegNr].toString();
+                        CurrentNegElement.value = key + ": " +  NegativeEngravings[key];
+                        if (NegDifference > 0) {
+                            CurrentNegElement.value = CurrentNegElement.value + " (+" + NegDifference + ")";
+                        }
+                        HiddenNegativeInput = HiddenNegativeInput + 1;
+                    }
+                }
+
+                for ( var key in Engravings){
+                    var HueNr = 0;
+                    var Difference = 0;
+                    if (Number(Engravings[key]) > 0) {
+                        var CurrentElement = document.getElementById(HiddenInput.toString());
+                        CurrentElement.style.display = "Block";
+                        if (Number(Engravings[key]) > 15){
+                            HueNr = 15;
+                            Difference = Number(Engravings[key]) - 15;
+                        } else if (Number(Engravings[key]) < 0){
+                            HueNr = 0;
+                        } else {
+                            HueNr = Number(Engravings[key]);
+                        }
+                        if (HueNr > 15) {NueNr = 15;}
+                        if (HueNr < 0) {HueNr = 0;}
+                        CurrentElement.style.background = Hue[HueNr].toString();
+                        CurrentElement.value = key + ": " +  Engravings[key];
+                        if (Difference > 0) {
+                            CurrentElement.value = CurrentElement.value + " (+" + Difference + ")";
+                        }
+                        HiddenInput = HiddenInput + 1;
+                    }
+                }
+                SumTotalPrice();
+            }
+
+            function getFormattedString(TargetString) {
+                return TargetString.replace(" ", "").replace(" ", "").replace(" ", "");
+            }
+            
+            function loadBuild() {
+                var x = document.getElementById("myFile");
+                x.click();
+                
+            }
+
+            var LoadedBuild = "";
+
+            document.getElementById('myFile')
+                .addEventListener('change', function() {
+                
+                var fr=new FileReader();
+                fr.onload=function(){
+                    LoadedBuild=fr.result;
+                    var BuildBody = LoadedBuild.split(/\r?\n/);
+                    processFile(BuildBody);
+                }
+                
+                fr.readAsText(this.files[0]);
+            })
+
+
+
+            function processFile (BB) {
+                var Amulet_name_1 = document.getElementById("amulet_name_1");
+                Amulet_name_1.value = BB[0];
+                var Amulet_value_1 = document.getElementById("amulet_value_1");
+                Amulet_value_1.value = BB[1];
+                var Amulet_name_2 = document.getElementById("amulet_name_2");
+                Amulet_name_2.value = BB[2];
+                var Amulet_value_2 = document.getElementById("amulet_value_2");
+                Amulet_value_2.value = BB[3];
+                var Amulet_name_negative = document.getElementById("amulet_name_negative");
+                Amulet_name_negative.value = BB[4];
+                var Amulet_value_negative = document.getElementById("amulet_value_negative");
+                Amulet_value_negative.value = BB[5];
+
+                var Earring1_name_1 = document.getElementById("earring1_name_1");
+                Earring1_name_1.value = BB[6];
+                var Earring1_value_1 = document.getElementById("earring1_value_1");
+                Earring1_value_1.value = BB[7];
+                var Earring1_name_2 = document.getElementById("earring1_name_2");
+                Earring1_name_2.value = BB[8];
+                var Earring1_value_2 = document.getElementById("earring1_value_2");
+                Earring1_value_2.value = BB[9];
+                var Earring1_name_negative = document.getElementById("earring1_name_negative");
+                Earring1_name_negative.value = BB[10];
+
+                var Earring1_value_negative = document.getElementById("earring1_value_negative");
+                Earring1_value_negative.value = BB[11];
+                var Earring2_name_1 = document.getElementById("earring2_name_1");
+                Earring2_name_1.value = BB[12];
+                var Earring2_value_1 = document.getElementById("earring2_value_1");
+                Earring2_value_1.value = BB[13];
+                var Earring2_name_2 = document.getElementById("earring2_name_2");
+                Earring2_name_2.value = BB[14];
+                var Earring2_value_2 = document.getElementById("earring2_value_2");
+                Earring2_value_2.value = BB[15];
+                var Earring2_name_negative = document.getElementById("earring2_name_negative");
+                Earring2_name_negative.value = BB[16];
+                var Earring2_value_negative = document.getElementById("earring2_value_negative");
+                Earring2_value_negative.value = BB[17];
+
+                var Ring1_name_1 = document.getElementById("ring1_name_1");
+                Ring1_name_1.value = BB[18];
+                var Ring1_value_1 = document.getElementById("ring1_value_1");
+                Ring1_value_1.value = BB[19];
+                var Ring1_name_2 = document.getElementById("ring1_name_2");
+                Ring1_name_2.value = BB[20];
+                var Ring1_value_2 = document.getElementById("ring1_value_2");
+                Ring1_value_2.value = BB[21];
+                var Ring1_name_negative = document.getElementById("ring1_name_negative");
+                Ring1_name_negative.value = BB[22];
+                var Ring1_value_negative = document.getElementById("ring1_value_negative");
+                Ring1_value_negative.value = BB[23];
+                var Ring2_name_1 = document.getElementById("ring2_name_1");
+                Ring2_name_1.value = BB[24];
+                var Ring2_value_1 = document.getElementById("ring2_value_1");
+                Ring2_value_1.value = BB[25];
+                var Ring2_name_2 = document.getElementById("ring2_name_2");
+                Ring2_name_2.value = BB[26];
+                var Ring2_value_2 = document.getElementById("ring2_value_2");
+                Ring2_value_2.value = BB[27];
+                var Ring2_name_negative = document.getElementById("ring2_name_negative");
+                Ring2_name_negative.value = BB[28];
+                var Ring2_value_negative = document.getElementById("ring2_value_negative");
+                Ring2_value_negative.value = BB[29];
+                
+                var Book_name_1 = document.getElementById("book_name_1");
+                Book_name_1.value = BB[30];
+                var Book_value_1 = document.getElementById("book_value_1");
+                Book_value_1.value = BB[31];
+                var Book_name_2 = document.getElementById("book_name_2");
+                Book_name_2.value = BB[32];
+                var Book_value_2 = document.getElementById("book_value_2");
+                Book_value_2.value = BB[33];
+
+                var Stone_name_1 = document.getElementById("stone_name_1");
+                Stone_name_1.value = BB[34];
+                var Stone_value_1 = document.getElementById("stone_value_1");
+                Stone_value_1.value = BB[35];
+                var Stone_name_2 = document.getElementById("stone_name_2");
+                Stone_name_2.value = BB[36];
+                var Stone_value_2 = document.getElementById("stone_value_2");
+                Stone_value_2.value = BB[37];
+                var Stone_name_negative = document.getElementById("stone_name_negative");
+                Stone_name_negative.value = BB[38];
+                var Stone_value_negative = document.getElementById("stone_value_negative");
+                Stone_value_negative.value = BB[39];
+
+                var Total_Price = document.getElementById("Total_Price");
+
+                calculateBuild("");
+                Total_Price.value = Number(BB[40]).toString();
+            }
+
+            function createBuildBody () {
+                var Amulet_name_1 = document.getElementById("amulet_name_1").value;
+                var Amulet_value_1 = document.getElementById("amulet_value_1").value;
+                var Amulet_name_2 = document.getElementById("amulet_name_2").value;
+                var Amulet_value_2 = document.getElementById("amulet_value_2").value;
+                var Amulet_name_negative = document.getElementById("amulet_name_negative").value;
+                var Amulet_value_negative = document.getElementById("amulet_value_negative").value;
+
+                var Earring1_name_1 = document.getElementById("earring1_name_1").value;
+                var Earring1_value_1 = document.getElementById("earring1_value_1").value;
+                var Earring1_name_2 = document.getElementById("earring1_name_2").value;
+                var Earring1_value_2 = document.getElementById("earring1_value_2").value;
+                var Earring1_name_negative = document.getElementById("earring1_name_negative").value;
+                var Earring1_value_negative = document.getElementById("earring1_value_negative").value;
+                var Earring2_name_1 = document.getElementById("earring2_name_1").value;
+                var Earring2_value_1 = document.getElementById("earring2_value_1").value;
+                var Earring2_name_2 = document.getElementById("earring2_name_2").value;
+                var Earring2_value_2 = document.getElementById("earring2_value_2").value;
+                var Earring2_name_negative = document.getElementById("earring2_name_negative").value;
+                var Earring2_value_negative = document.getElementById("earring2_value_negative").value;
+
+                var Ring1_name_1 = document.getElementById("ring1_name_1").value;
+                var Ring1_value_1 = document.getElementById("ring1_value_1").value;
+                var Ring1_name_2 = document.getElementById("ring1_name_2").value;
+                var Ring1_value_2 = document.getElementById("ring1_value_2").value;
+                var Ring1_name_negative = document.getElementById("ring1_name_negative").value;
+                var Ring1_value_negative = document.getElementById("ring1_value_negative").value;
+                var Ring2_name_1 = document.getElementById("ring2_name_1").value;
+                var Ring2_value_1 = document.getElementById("ring2_value_1").value;
+                var Ring2_name_2 = document.getElementById("ring2_name_2").value;
+                var Ring2_value_2 = document.getElementById("ring2_value_2").value;
+                var Ring2_name_negative = document.getElementById("ring2_name_negative").value;
+                var Ring2_value_negative = document.getElementById("ring2_value_negative").value;
+                
+                var Book_name_1 = document.getElementById("book_name_1").value;
+                var Book_value_1 = document.getElementById("book_value_1").value;
+                var Book_name_2 = document.getElementById("book_name_2").value;
+                var Book_value_2 = document.getElementById("book_value_2").value;
+
+                var Stone_name_1 = document.getElementById("stone_name_1").value;
+                var Stone_value_1 = document.getElementById("stone_value_1").value;
+                var Stone_name_2 = document.getElementById("stone_name_2").value;
+                var Stone_value_2 = document.getElementById("stone_value_2").value;
+                var Stone_name_negative = document.getElementById("stone_name_negative").value;
+                var Stone_value_negative = document.getElementById("stone_value_negative").value;
+
+                var Total_Price = document.getElementById("Total_Price").value;
+
+                var cTextBody = "";
+
+                cTextBody = Amulet_name_1 + "\n" +
+                            Amulet_value_1 + "\n" +
+                            Amulet_name_2 + "\n" +
+                            Amulet_value_2 + "\n" +
+                            Amulet_name_negative + "\n" +
+                            Amulet_value_negative + "\n" +
+                            Earring1_name_1 + "\n" + 
+                            Earring1_value_1 + "\n" + 
+                            Earring1_name_2 + "\n" + 
+                            Earring1_value_2 + "\n" + 
+                            Earring1_name_negative + "\n" + 
+                            Earring1_value_negative + "\n" + 
+                            Earring2_name_1 + "\n" + 
+                            Earring2_value_1 + "\n" + 
+                            Earring2_name_2 + "\n" + 
+                            Earring2_value_2 + "\n" + 
+                            Earring2_name_negative + "\n" + 
+                            Earring2_value_negative + "\n" + 
+                            Ring1_name_1 + "\n" + 
+                            Ring1_value_1 + "\n" + 
+                            Ring1_name_2 + "\n" + 
+                            Ring1_value_2 + "\n" + 
+                            Ring1_name_negative + "\n" + 
+                            Ring1_value_negative + "\n" + 
+                            Ring2_name_1 + "\n" + 
+                            Ring2_value_1 + "\n" + 
+                            Ring2_name_2 + "\n" + 
+                            Ring2_value_2 + "\n" + 
+                            Ring2_name_negative + "\n" + 
+                            Ring2_value_negative + "\n" + 
+                            Book_name_1 + "\n" + 
+                            Book_value_1 + "\n" + 
+                            Book_name_2 + "\n" + 
+                            Book_value_2 + "\n" + 
+                            Stone_name_1 + "\n" + 
+                            Stone_value_1 + "\n" + 
+                            Stone_name_2 + "\n" + 
+                            Stone_value_2 + "\n" + 
+                            Stone_name_negative + "\n" + 
+                            Stone_value_negative + "\n" + 
+                            Total_Price + "\n";
+                return cTextBody;
+
+            }
+
+            var textFile = null,
+            makeTextFile = function (text) {
+                var data = new Blob([text], {type: 'text/plain'});
+
+                // If we are replacing a previously generated file we need to
+                // manually revoke the object URL to avoid memory leaks.
+                if (textFile !== null) {
+                window.URL.revokeObjectURL(textFile);
+                }
+
+                textFile = window.URL.createObjectURL(data);
+
+                // returns a URL you can use as a href
+                return textFile;
+            };
+
+            function saveBuild() {
+                var link = document.createElement('a');
+                link.setAttribute('download', 'build.lab');
+                link.href = makeTextFile(createBuildBody());
+                document.body.appendChild(link);
+
+                // wait for the link to be added to the document
+                window.requestAnimationFrame(function () {
+                var event = new MouseEvent('click');
+                link.dispatchEvent(event);
+                document.body.removeChild(link);
+                });
+
+            }
+        </script>
+
+    </body>
+</html>
