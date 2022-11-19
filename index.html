@@ -804,28 +804,32 @@
                     }
                 }
 
-                for ( var key in Engravings){
-                    var HueNr = 0;
-                    var Difference = 0;
-                    if (Number(Engravings[key]) > 0) {
-                        var CurrentElement = document.getElementById(HiddenInput.toString());
-                        CurrentElement.style.display = "Block";
-                        if (Number(Engravings[key]) > 15){
-                            HueNr = 15;
-                            Difference = Number(Engravings[key]) - 15;
-                        } else if (Number(Engravings[key]) < 0){
-                            HueNr = 0;
-                        } else {
-                            HueNr = Number(Engravings[key]);
+                for (let i = 15; i >= 1; i--){
+                    for ( var key in Engravings){
+                        if (Number(Engravings[key]) == Number(i) || (Number(Engravings[key]) > Number(15) && Number(i) == 15)) {
+                            var HueNr = 0;
+                            var Difference = 0;
+                            if (Number(Engravings[key]) > 0) {
+                                var CurrentElement = document.getElementById(HiddenInput.toString());
+                                CurrentElement.style.display = "Block";
+                                if (Number(Engravings[key]) > 15){
+                                    HueNr = 15;
+                                    Difference = Number(Engravings[key]) - 15;
+                                } else if (Number(Engravings[key]) < 0){
+                                    HueNr = 0;
+                                } else {
+                                    HueNr = Number(Engravings[key]);
+                                }
+                                if (HueNr > 15) {NueNr = 15;}
+                                if (HueNr < 0) {HueNr = 0;}
+                                CurrentElement.style.background = Hue[HueNr].toString();
+                                CurrentElement.value = key + ": " +  Engravings[key];
+                                if (Difference > 0) {
+                                    CurrentElement.value = CurrentElement.value + " (+" + Difference + ")";
+                                }
+                                HiddenInput = HiddenInput + 1;
+                            }
                         }
-                        if (HueNr > 15) {NueNr = 15;}
-                        if (HueNr < 0) {HueNr = 0;}
-                        CurrentElement.style.background = Hue[HueNr].toString();
-                        CurrentElement.value = key + ": " +  Engravings[key];
-                        if (Difference > 0) {
-                            CurrentElement.value = CurrentElement.value + " (+" + Difference + ")";
-                        }
-                        HiddenInput = HiddenInput + 1;
                     }
                 }
                 SumTotalPrice();
